@@ -41,6 +41,13 @@ Use this skill to run a sustained implementation loop as an orchestrator: keep t
    - Add newly discovered todos.
    - Record worker starts/completions, merge decisions, test outcomes, and cleanup.
 10. Keep going until the current todo list is complete or a real blocker remains.
+11. When the current todo list is complete, perform completion discipline before stopping:
+   - Re-read the original plan source and `implementation-status.md`.
+   - Compare completed work against the plan goal, phases, and exit criteria.
+   - Promote still-required plan items, open exit criteria, and required unearthed todos into `Current Todo`.
+   - Continue implementation until the original goal is complete, or until a real blocker is recorded.
+   - Only call orchestration complete when every required plan phase is implemented or explicitly deferred by the user, all exit criteria are verified, all required unearthed todos are resolved, and remaining todos are clearly marked optional/future.
+   - Do not stop after scaffolding, smoke tests, or baseline benchmarks if the plan requires a functional implementation. Baselines are intermediate verification, not completion.
 
 ## Resume Existing Work
 
@@ -152,6 +159,24 @@ If verification genuinely cannot be completed, leave a specific open todo such a
 ```markdown
 12. [ ] Run sidecar tests in an environment with FastAPI/pytest installed.
 ```
+
+## Completion Discipline
+
+Do not treat the current todo list as complete if the broader implementation plan still has unresolved phases, exit criteria, or unearthed todos that are required for the user's stated goal.
+
+When a todo list reaches all checked items:
+
+1. Re-read the original plan source and status file.
+2. Compare completed work against the plan's goal, phases, and exit criteria.
+3. Promote any still-required plan items, open exit criteria, or unresolved required unearthed todos into `Current Todo`.
+4. Continue implementation until the original goal is complete, or until a real blocker is recorded.
+5. Only call the orchestration complete when:
+   - every required plan phase is implemented or explicitly deferred by the user;
+   - all exit criteria are verified;
+   - all required unearthed todos are resolved;
+   - remaining todos are clearly marked as optional/future work.
+
+Do not stop after scaffolding, smoke tests, or baseline benchmarks if the plan requires a functional implementation. Baselines are intermediate verification, not completion.
 
 ## Lessons Learned
 
