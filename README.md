@@ -4,26 +4,25 @@ Homemade Codex skills for day-to-day agent workflows.
 
 ## Skills
 
-### Orchestrate
+- [Orchestrate](skills/orchestrate/README.md): long-running implementation orchestration.
+- [Steer](skills/steer/README.md): mid-task course correction.
 
-`orchestrate` runs a sustained implementation loop for larger tasks. It keeps a live status file, turns plans into ordered todos, coordinates async workers where useful, reviews worker output before merging, and verifies the result before calling work complete.
+Each skill folder contains:
 
-Use it when you want Codex to execute an implementation plan end to end instead of only making a single isolated change.
-
-### Steer
-
-`steer` course-corrects an active Codex task without treating the correction as a new standalone request. It folds new guidance into the current run, preserves useful work already done, and continues toward the updated goal.
-
-Use it when you need to redirect Codex mid-task with constraints such as "actually use this approach", "instead target this file", or "$steer keep the existing API unchanged".
+- `README.md`: human instructions, examples, and installation notes.
+- `SKILL.md`: Codex-readable skill instructions.
+- `agents/openai.yaml`: optional agent metadata.
 
 ## Layout
 
 ```text
 skills/
   orchestrate/
+    README.md
     SKILL.md
     agents/openai.yaml
   steer/
+    README.md
     SKILL.md
     agents/openai.yaml
 ```
