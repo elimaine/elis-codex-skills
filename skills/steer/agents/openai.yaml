@@ -1,0 +1,4 @@
+interface:
+  display_name: "Steer"
+  short_description: "Course-correct an active Codex task"
+  default_prompt: "Use $steer to redirect the current task with this updated guidance."

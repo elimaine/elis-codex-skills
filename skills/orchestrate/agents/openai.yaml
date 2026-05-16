@@ -1,0 +1,4 @@
+interface:
+  display_name: "Orchestrate"
+  short_description: "Coordinate async implementation workers"
+  default_prompt: "Use $orchestrate to execute this implementation plan end to end with status tracking and async worker handoffs."
