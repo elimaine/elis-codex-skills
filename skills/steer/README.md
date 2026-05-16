@@ -50,10 +50,10 @@ If the correction makes the task incoherent, Codex should ask one concise clarif
 From this repository:
 
 ```bash
-cp -R skills/steer ~/.codex/skills/
+ln -s "$PWD/skills/steer" ~/.codex/skills/steer
 ```
 
-Restart Codex or reload skills after copying.
+Restart Codex or reload skills after symlinking.
 
 ## Files
 

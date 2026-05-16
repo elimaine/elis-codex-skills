@@ -29,11 +29,11 @@ skills/
 
 ## Install
 
-Copy the desired skill directories into your Codex skills directory:
+Symlink the desired skill directories into your Codex skills directory. This keeps the repo checkout as the source of truth, so edits made here are picked up by Codex without copying files back and forth.
 
 ```bash
-cp -R skills/orchestrate ~/.codex/skills/
-cp -R skills/steer ~/.codex/skills/
+ln -s "$PWD/skills/orchestrate" ~/.codex/skills/orchestrate
+ln -s "$PWD/skills/steer" ~/.codex/skills/steer
 ```
 
-Restart Codex or reload skills after copying.
+Restart Codex or reload skills after symlinking.

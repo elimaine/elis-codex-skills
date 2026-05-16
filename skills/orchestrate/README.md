@@ -53,10 +53,10 @@ The important behavior is completion discipline: finishing the current checklist
 From this repository:
 
 ```bash
-cp -R skills/orchestrate ~/.codex/skills/
+ln -s "$PWD/skills/orchestrate" ~/.codex/skills/orchestrate
 ```
 
-Restart Codex or reload skills after copying.
+Restart Codex or reload skills after symlinking.
 
 ## Files
 
