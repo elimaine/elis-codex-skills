@@ -1,0 +1,4 @@
+interface:
+  display_name: "Export Clean Repo"
+  short_description: "Export a clean git-tracked copy of a local repo."
+  default_prompt: "Export the hardcoded test repo into a clean git-tracked folder with safe ignores."
